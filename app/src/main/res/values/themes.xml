@@ -1,8 +1,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.Agenda" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Cor primária. -->
+        <item name="colorPrimary">@color/primary_100</item>
+        <item name="colorPrimaryVariant">@color/primary_200</item>
+        <!--Core secundária -->
+        <item name="colorSecondary">@color/secondary_100</item>
+        <item name="colorSecondaryVariant">@color/secondary_200</item>
+
     </style>
 
     <style name="Theme.Agenda" parent="Base.Theme.Agenda" />
