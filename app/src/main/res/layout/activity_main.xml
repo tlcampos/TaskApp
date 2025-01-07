@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,45 +9,62 @@
         android:id="@+id/app_bar_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="00dp"
+            android:contentDescription="@null"
             android:src="@drawable/ic_person"
-            android:layout_margin="18dp"
-            app:civ_border_width="2dp"
             app:civ_border_color="@color/neutral_500"
-            android:contentDescription="@null"/>
+            app:civ_border_width="2dp" />
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:title="Olá, Manoel"/>
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="Olá, Manoel" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <TextView
+        android:id="@+id/txt_info_reservation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Você ainda não fez a sua reserva."
-        android:textSize="16sp"
         android:layout_marginStart="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/app_bar_main"
+        android:layout_marginEnd="16dp"
+        android:text="@string/you_didnt_make_your_reservation"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/app_bar_main" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_info_reservation"
+        tools:itemCount="10"
+        tools:listitem="@layout/reservation_rows"
+        tools:orientation="vertical" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fab_make_reservation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:icon="@drawable/baseline_today_24"
-        android:padding="10dp"
         android:layout_margin="16dp"
-        android:layout_gravity="end|bottom"
+        android:backgroundTint="?attr/colorPrimary"
+        android:padding="10dp"
         android:text="@string/make_reservation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        android:textColor="@color/neutral_100"
+        app:icon="@drawable/ic_today_24"
+        app:iconTint="@color/neutral_100"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

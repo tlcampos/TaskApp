@@ -2,4 +2,19 @@
     <string name="app_name">Agenda</string>
     <string name="welcome">Olá, Manoel.</string>
     <string name="make_reservation">Fazer reserva</string>
+    <string name="you_didnt_make_your_reservation">Você ainda não fez a sua reserva.</string>
+    <string name="txt_reservation_name">A reserva será realizada em seu nome</string>
+    <string name="txt_make_reservation">Faça sua reserva</string>
+    <string name="txt_info_person">Informações pessoais</string>
+    <string name="txt_name">Nome</string>
+    <string name="txt_document">CPF</string>
+    <string name="txt_info_adress">Endereço</string>
+    <string name="txt_postal_code">CEP</string>
+    <string name="txt_street">Logradouro</string>
+    <string name="txt_number">Número</string>
+    <string name="txt_complement">Complemento</string>
+    <string name="txt_city">Cidade</string>
+    <string name="txt_state">UF</string>
+    <string name="tx_make_reservation">Fazer reserva</string>
+    <string name="txt_neighborhood">Bairro</string>
 </resources>
