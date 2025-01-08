@@ -1,6 +1,9 @@
 package com.example.agenda
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.agenda.api.Api
@@ -18,6 +21,9 @@ class Reservation : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityReservationBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val toolbar = binding.toolbarReservation
+        setSupportActionBar(toolbar)
 
         //Configurar o Retrofit
         val retrofit = Retrofit.Builder()
@@ -40,14 +46,21 @@ class Reservation : AppCompatActivity() {
                             val bairro = response.body()?.bairro
                             val localidade = response.body()?.localidade
                             val uf = response.body()?.uf
-                            setAdressForm(logradouro.toString(), bairro.toString(), localidade.toString(), uf.toString())
-                        }else {
-                            Toast.makeText(applicationContext, "Cep Invalido!", Toast.LENGTH_SHORT).show()
+                            setAdressForm(
+                                logradouro.toString(),
+                                bairro.toString(),
+                                localidade.toString(),
+                                uf.toString()
+                            )
+                        } else {
+                            Toast.makeText(applicationContext, "Cep Invalido!", Toast.LENGTH_SHORT)
+                                .show()
                         }
                     }
 
                     override fun onFailure(call: Call<Endereco>, t: Throwable) {
-                        Toast.makeText(applicationContext, "Erro inesperado!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(applicationContext, "Erro inesperado!", Toast.LENGTH_SHORT)
+                            .show()
 
                     }
                 })
@@ -56,10 +69,27 @@ class Reservation : AppCompatActivity() {
         }
     }
 
-    private fun setAdressForm(logradouro: String, bairro: String, localidade: String, uf: String){
+    private fun setAdressForm(logradouro: String, bairro: String, localidade: String, uf: String) {
         binding.txtEditStreet.setText(logradouro)
         binding.txtEditNeighborhood.setText(bairro)
         binding.txtEditCity.setText(localidade)
         binding.txtEditState.setText(uf)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_reservation, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+
+            R.id.toolbar_reservation_close -> {
+                finish()
+                return true
+            }
+
+            else -> return super.onOptionsItemSelected(item)
+        }
     }
 }
