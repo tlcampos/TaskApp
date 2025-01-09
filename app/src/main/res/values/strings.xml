@@ -17,4 +17,16 @@
     <string name="txt_state">UF</string>
     <string name="tx_make_reservation">Fazer reserva</string>
     <string name="txt_neighborhood">Bairro</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="enter">Entrar</string>
+    <string name="password">Senha</string>
+    <string name="e_mail">E-mail</string>
+    <string name="does_not_have_account">Não possui uma conta?<b><font color='#000000'> Cadastre-se</font></b></string>
 </resources>

@@ -21,8 +21,6 @@ class MainActivity : AppCompatActivity() {
             reservationList
         )
 
-        binding.rvMain.adapter = adapter
-
         val reservation1 = ReservationTicket(
             id = "0000001",
             date = "Reserva para o dia 25 Dez 2024",
@@ -63,11 +61,21 @@ class MainActivity : AppCompatActivity() {
         )
         reservationList.add(reservation5)
 
+        binding.rvMain.adapter = adapter
+
+        if (reservationList.isEmpty()){
+            binding.txtInfoReservation.text = "Você ainda não fez sua reserva."
+
+        } else {
+            binding.txtInfoReservation.text = "Aqui estão suas reservas."
+        }
+
         val fab = binding.fabMakeReservation
 
         fab.setOnClickListener {
-            val intent = Intent(this, Reservation::class.java)
+            val intent = Intent(this, ReservationActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_bottom, R.anim.slide_out_top)
         }
     }
 }

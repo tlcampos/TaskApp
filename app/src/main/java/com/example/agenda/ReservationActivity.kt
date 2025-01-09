@@ -1,9 +1,11 @@
 package com.example.agenda
 
-import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.Menu
 import android.view.MenuItem
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.agenda.api.Api
@@ -14,7 +16,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class Reservation : AppCompatActivity() {
+class ReservationActivity : AppCompatActivity() {
     private lateinit var binding: ActivityReservationBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -77,7 +79,7 @@ class Reservation : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.main_reservation, menu)
+        menuInflater.inflate(R.menu.reservation_menu, menu)
         return true
     }
 
@@ -85,10 +87,16 @@ class Reservation : AppCompatActivity() {
         when (item.itemId) {
 
             R.id.toolbar_reservation_close -> {
-                finish()
+                val handler = Handler(Looper.getMainLooper())
+                handler.postDelayed(
+                    { val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+                    val view = currentFocus
+                    imm.hideSoftInputFromWindow(view?.windowToken, 0)
+                        finish()
+                        overridePendingTransition(R.anim.slide_out_bottom, R.anim.fade_in)
+                    },500)
                 return true
             }
-
             else -> return super.onOptionsItemSelected(item)
         }
     }

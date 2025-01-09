@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Reservation">
+    tools:context=".ReservationActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar_reservation"
@@ -26,7 +26,7 @@
                 android:id="@+id/toolbar_reservation"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:menu="@menu/main_reservation"
+                app:menu="@menu/reservation_menu"
                 app:navigationIcon="@drawable/ic_today_24"
                 app:title="@string/txt_make_reservation"/>
 
