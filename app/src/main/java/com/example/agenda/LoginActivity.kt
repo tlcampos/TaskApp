@@ -30,7 +30,7 @@ class LoginActivity : AppCompatActivity() {
                 .error = "Esse e-mail é invalido"
 
             binding.loginEditPasswordInput
-                .error = "Essa Incorretaa"
+                .error = "Senha Incorreta"
         }
     }
 

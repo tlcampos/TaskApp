@@ -29,4 +29,8 @@
     <string name="password">Senha</string>
     <string name="e_mail">E-mail</string>
     <string name="does_not_have_account">Não possui uma conta?<b><font color='#000000'> Cadastre-se</font></b></string>
+    <string name="register">Cadastrar</string>
+    <string name="already_has_account">Já possui uma conta? <b><font color='#000000'>Faca login.</font></b></string>
+    <string name="name">Nome</string>
+    <string name="confirm_password">Confirme a senha</string>
 </resources>
