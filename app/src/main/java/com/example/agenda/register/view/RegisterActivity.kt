@@ -1,7 +1,8 @@
-package com.example.agenda
+package com.example.agenda.register.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.agenda.R
 
 class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

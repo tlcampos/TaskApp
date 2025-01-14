@@ -1,12 +1,9 @@
-package com.example.agenda
+package com.example.agenda.login.view
 
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.agenda.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {

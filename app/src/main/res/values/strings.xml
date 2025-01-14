@@ -33,4 +33,6 @@
     <string name="already_has_account">Já possui uma conta? <b><font color='#000000'>Faca login.</font></b></string>
     <string name="name">Nome</string>
     <string name="confirm_password">Confirme a senha</string>
+    <string name="document">CPF</string>
+    <string name="send">Enviar</string>
 </resources>
