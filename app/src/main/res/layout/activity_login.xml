@@ -19,13 +19,15 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/login_img_logo"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="48dp"
                 android:contentDescription="@null"
-                android:src="@drawable/ic_close_24" />
+                android:src="@drawable/ic_person"
+                app:civ_border_width="2dp"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/login_edit_email_input"
@@ -65,15 +67,12 @@
                     android:padding="16dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
+            <com.example.agenda.LoadingButton
                 android:id="@+id/login_btn_enter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
                 android:backgroundTint="@color/button_background"
-                android:padding="16dp"
-                android:text="@string/enter" />
+                app:text="@string/enter"/>
 
         </LinearLayout>
 

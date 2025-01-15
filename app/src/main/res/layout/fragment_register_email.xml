@@ -31,7 +31,7 @@
                 android:layout_marginBottom="36dp"/>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/login_edit_email_input"
+                android:id="@+id/register_edit_email_input"
                 style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
                 app:hintEnabled="false">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/login_edit_email"
+                    android:id="@+id/register_edit_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/e_mail"
@@ -63,7 +63,7 @@
     </ScrollView>
 
     <TextView
-        android:id="@+id/resgister_txt_register"
+        android:id="@+id/register_txt_register"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

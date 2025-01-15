@@ -1,9 +1,12 @@
 package com.example.agenda.login.view
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.text.Editable
 import android.text.TextWatcher
 import androidx.appcompat.app.AppCompatActivity
+import com.example.agenda.common.util.TxtWatcher
 import com.example.agenda.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -12,35 +15,35 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityLoginBinding.inflate(layoutInflater)
+
         setContentView(binding.root)
 
-        val editEmail = binding.loginEditEmail
-        val editPassword = binding.loginEditPassword
+        with(binding) {
+            loginEditEmail.addTextChangedListener(watcher)
+            loginEditPassword.addTextChangedListener(watcher)
 
-        editEmail.addTextChangedListener(watcher)
-        editPassword.addTextChangedListener(watcher)
+            val btnEnter = binding.loginBtnEnter
 
-        binding.loginBtnEnter.setOnClickListener {
+            btnEnter.setOnClickListener {
+                btnEnter.showProgress(true)
 
-            binding.loginEditEmailInput
-                .error = "Esse e-mail é invalido"
+                binding.loginEditEmailInput
+                    .error = "Esse e-mail é invalido"
 
-            binding.loginEditPasswordInput
-                .error = "Senha Incorreta"
+                binding.loginEditPasswordInput
+                    .error = "Senha Incorreta"
+
+                Handler(Looper.getMainLooper()).postDelayed({
+                    btnEnter.showProgress(false)
+                }, 2000)
+            }
         }
     }
 
-    private val watcher = object : TextWatcher {
-        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-        }
-
-        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-            binding.loginBtnEnter.isEnabled = s.toString().isNotEmpty()
-        }
-
-        override fun afterTextChanged(s: Editable?) {
-        }
-
+    private val watcher = TxtWatcher {
+        binding.loginBtnEnter.isEnabled = it.isNotEmpty()
     }
+
 }
