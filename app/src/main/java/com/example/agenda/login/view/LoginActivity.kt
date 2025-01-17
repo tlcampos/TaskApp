@@ -7,6 +7,7 @@ import android.os.Looper
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.agenda.MainActivity
+import com.example.agenda.common.base.DependecyInjector
 import com.example.agenda.common.util.TxtWatcher
 import com.example.agenda.databinding.ActivityLoginBinding
 import com.example.agenda.login.Login
@@ -27,9 +28,7 @@ class LoginActivity : AppCompatActivity(), Login.View {
 
         setContentView(binding.root)
 
-        val repository = LoginRepository(FakeDataSource())
-
-        presenter = LoginPresenter(this, repository)
+        presenter = LoginPresenter(this, DependecyInjector.loginRepository())
 
         with(binding) {
             loginEditEmail.addTextChangedListener(watcher)
