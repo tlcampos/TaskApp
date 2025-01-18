@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.agenda.databinding.ReservationRowsBinding
-import com.example.agenda.model.ReservationTicket
+import com.example.agenda.common.model.ReservationTicket
 
 class ReservationListTicketAdapter(
     private val context: Context,

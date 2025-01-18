@@ -6,11 +6,17 @@ interface RegisterEmail {
 
     //camada Presenter
     interface Presenter {
-        fun registerUser(email: String)
+        fun create(email: String)
         fun onDestroy()
     }
 
     interface View {
+        fun showProgress(enabled: Boolean)
+
         fun displayEmailFailure(@StringRes emailError: Int?)
+
+        fun onEmailFailure(message: String)
+
+        fun goToNameAndPasswordScreen(email: String)
     }
 }

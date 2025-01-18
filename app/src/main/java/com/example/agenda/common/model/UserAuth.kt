@@ -1,4 +1,4 @@
-package com.example.agenda.model
+package com.example.agenda.common.model
 
 import java.util.UUID
 

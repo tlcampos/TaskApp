@@ -1,6 +1,6 @@
 package com.example.agenda.api
 
-import com.example.agenda.model.Endereco
+import com.example.agenda.common.model.Endereco
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

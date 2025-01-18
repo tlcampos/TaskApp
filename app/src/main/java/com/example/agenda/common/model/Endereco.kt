@@ -1,4 +1,4 @@
-package com.example.agenda.model
+package com.example.agenda.common.model
 
 class Endereco (
     val logradouro: String? = null,

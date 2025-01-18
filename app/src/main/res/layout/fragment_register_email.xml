@@ -48,22 +48,19 @@
                     android:padding="16dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
-                android:id="@+id/register_btn_enter"
+            <com.example.agenda.LoadingButton
+                android:id="@+id/register_btn_next"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
                 android:backgroundTint="@color/button_background"
-                android:padding="16dp"
-                android:text="@string/send" />
+                app:text="@string/send" />
 
         </LinearLayout>
 
     </ScrollView>
 
     <TextView
-        android:id="@+id/register_txt_register"
+        android:id="@+id/register_txt_login"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

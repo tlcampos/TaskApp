@@ -5,6 +5,7 @@ import com.example.agenda.R
 import com.example.agenda.login.Login
 import com.example.agenda.login.data.LoginCallback
 import com.example.agenda.login.data.LoginRepository
+import com.example.agenda.common.model.UserAuth
 
 class LoginPresenter(
     private var view: Login.View?,
@@ -31,7 +32,7 @@ class LoginPresenter(
             view?.showProgress(true)
 
             repository.login(email, password, object : LoginCallback {
-                override fun onSuccess() {
+                override fun onSuccess(userAuth: UserAuth) {
                     view?.onUserAuthenticated()
                 }
 
