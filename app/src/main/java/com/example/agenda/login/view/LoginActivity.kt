@@ -2,18 +2,15 @@ package com.example.agenda.login.view
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.agenda.MainActivity
-import com.example.agenda.common.base.DependecyInjector
+import com.example.agenda.common.base.DependencyInjector
 import com.example.agenda.common.util.TxtWatcher
 import com.example.agenda.databinding.ActivityLoginBinding
 import com.example.agenda.login.Login
-import com.example.agenda.login.data.FakeDataSource
-import com.example.agenda.login.data.LoginRepository
 import com.example.agenda.login.presentation.LoginPresenter
+import com.example.agenda.register.view.RegisterActivity
 
 class LoginActivity : AppCompatActivity(), Login.View {
 
@@ -28,7 +25,7 @@ class LoginActivity : AppCompatActivity(), Login.View {
 
         setContentView(binding.root)
 
-        presenter = LoginPresenter(this, DependecyInjector.loginRepository())
+        presenter = LoginPresenter(this, DependencyInjector.loginRepository())
 
         with(binding) {
             loginEditEmail.addTextChangedListener(watcher)
@@ -46,6 +43,10 @@ class LoginActivity : AppCompatActivity(), Login.View {
             btnEnter.setOnClickListener {
                 presenter.login(loginEditEmail.text.toString(), loginEditPassword.text.toString())
             }
+            loginTxtRegister.setOnClickListener {
+                goToRegisterScreen()
+
+            }
         }
     }
     override fun onDestroy() {
@@ -56,6 +57,11 @@ class LoginActivity : AppCompatActivity(), Login.View {
     private val watcher = TxtWatcher {
         binding.loginBtnEnter.isEnabled = binding.loginEditEmail.text.toString().isNotEmpty()
                 && binding.loginEditPassword.text.toString().isNotEmpty()
+    }
+
+    private fun goToRegisterScreen() {
+        val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
+        startActivity(intent)
     }
 
     override fun showProgress(enabled: Boolean) {

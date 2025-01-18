@@ -6,13 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".register.view.RegisterActivity">
 
-    <fragment
+    <FrameLayout
         android:id="@+id/register_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout="@layout/fragment_register_email"
         android:name="com.example.agenda.register.view.RegisterEmailFragment"/>
-
-
 
 </LinearLayout>

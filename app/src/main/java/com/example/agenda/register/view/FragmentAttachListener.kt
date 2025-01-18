@@ -1,4 +1,5 @@
 package com.example.agenda.register.view
 
-interface FragmentAttachListenner {
+interface FragmentAttachListener {
+    fun goToNameAndPasswordFragment(email: String)
 }
