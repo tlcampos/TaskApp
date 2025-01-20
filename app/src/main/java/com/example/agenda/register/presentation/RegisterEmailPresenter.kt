@@ -2,14 +2,13 @@ package com.example.agenda.register.presentation
 
 import android.util.Patterns
 import com.example.agenda.R
-import com.example.agenda.common.model.UserAuth
 import com.example.agenda.register.RegisterEmail
-import com.example.agenda.register.data.RegisterEmailCallback
-import com.example.agenda.register.data.RegisterEmailRepository
+import com.example.agenda.register.data.RegisterCallback
+import com.example.agenda.register.data.RegisterRepository
 
 class RegisterEmailPresenter(
     private var view: RegisterEmail.View?,
-    private val repository: RegisterEmailRepository
+    private val repository: RegisterRepository
 ) : RegisterEmail.Presenter {
 
     override fun create(email: String) {
@@ -24,7 +23,7 @@ class RegisterEmailPresenter(
         if (isEmailValid) {
             view?.showProgress(true)
 
-            repository.create(email, object : RegisterEmailCallback {
+            repository.create(email, object : RegisterCallback {
                 override fun onSuccess() {
                     view?.goToNameAndPasswordScreen(email)
                 }

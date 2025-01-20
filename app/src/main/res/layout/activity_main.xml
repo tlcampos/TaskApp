@@ -23,7 +23,7 @@
             android:id="@+id/toolbar_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:title="Olá, Manoel"
+            app:title="@string/welcome"
             app:navigationIcon="@drawable/ic_person"/>
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
