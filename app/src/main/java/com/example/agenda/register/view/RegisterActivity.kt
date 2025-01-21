@@ -1,8 +1,10 @@
 package com.example.agenda.register.view
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.agenda.MainActivity
 import com.example.agenda.R
 import com.example.agenda.databinding.ActivityRegisterBinding
 
@@ -31,6 +33,17 @@ class RegisterActivity : AppCompatActivity(), FragmentAttachListener {
 
         replaceFragment(fragment)
 
+    }
+
+    override fun goToHomeScreen(name: String) {
+        val arguments = Bundle().apply {
+            putString("key_name", name)
+        }
+        val intent = Intent(this, MainActivity::class.java).apply {
+            putExtras(arguments)
+        }
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
     }
 
     private fun replaceFragment(fragment: Fragment) {

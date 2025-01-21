@@ -1,5 +1,6 @@
 package com.example.agenda.register.view
 
+import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -15,6 +16,8 @@ class RegisterNamePasswordFragment : Fragment(R.layout.fragment_register_name_pa
     RegisterNamePassword.View {
 
     private var binding: FragmentRegisterNamePasswordBinding? = null
+
+    private var fragmentAttachListener: FragmentAttachListener? = null
 
     private lateinit var presenter: RegisterNamePassword.Presenter
 
@@ -65,6 +68,13 @@ class RegisterNamePasswordFragment : Fragment(R.layout.fragment_register_name_pa
         }
     }
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is FragmentAttachListener) {
+            fragmentAttachListener = context
+        }
+    }
+
     override fun showProgress(enabled: Boolean) {
         binding?.registerBtnRegister?.showProgress(enabled)
     }
@@ -87,6 +97,7 @@ class RegisterNamePasswordFragment : Fragment(R.layout.fragment_register_name_pa
 
     override fun onCreateSuccess(name: String) {
         //abrir tela home
+        fragmentAttachListener?.goToHomeScreen(name)
     }
 
     override fun onDestroy() {

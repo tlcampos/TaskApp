@@ -38,4 +38,6 @@
     <string name="document">CPF</string>
     <string name="send">Enviar</string>
     <string name="invalid_email">E-mail inválido.</string>
+    <string name="you_havent_made_your_reservation">Você ainda não fez sua reserva.</string>
+    <string name="here_is_your_reservation">Aqui estão suas reservas.</string>
 </resources>

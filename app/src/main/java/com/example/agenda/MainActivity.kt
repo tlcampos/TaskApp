@@ -14,6 +14,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val name = intent.extras?.getString("key_name")?.split(" ")?.firstOrNull() ?: throw IllegalArgumentException("name not found")
+
         val reservationList : MutableList<ReservationTicket> = mutableListOf()
 
         val adapter = ReservationListTicketAdapter(
@@ -45,29 +47,15 @@ class MainActivity : AppCompatActivity() {
         )
         reservationList.add(reservation3)
 
-        val reservation4 = ReservationTicket(
-            id = "0000004",
-            date = "Reserva para o dia 25 Fev 2025",
-            status = "Registrada"
-
-        )
-        reservationList.add(reservation4)
-
-        val reservation5 = ReservationTicket(
-            id = "0000005",
-            date = "Reserva para o dia 10 Junho 2025",
-            status = "Registrada"
-
-        )
-        reservationList.add(reservation5)
-
         binding.rvMain.adapter = adapter
 
+        binding.toolbarMain.title = getString(R.string.welcome,name)
+
         if (reservationList.isEmpty()){
-            binding.txtInfoReservation.text = "Você ainda não fez sua reserva."
+            binding.txtInfoReservation.text = getString(R.string.you_havent_made_your_reservation)
 
         } else {
-            binding.txtInfoReservation.text = "Aqui estão suas reservas."
+            binding.txtInfoReservation.text = getString(R.string.here_is_your_reservation)
         }
 
         val fab = binding.fabMakeReservation
@@ -77,5 +65,9 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
             overridePendingTransition(R.anim.slide_in_bottom, R.anim.slide_out_top)
         }
+    }
+
+    companion object {
+        const val KEY_NAME = "key_name"
     }
 }
