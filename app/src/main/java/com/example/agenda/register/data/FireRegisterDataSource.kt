@@ -30,6 +30,5 @@ class FireRegisterDataSource : RegisterDataSource {
         password: String,
         callback: RegisterCallback
     ) {
-        TODO("Not yet implemented")
     }
 }
