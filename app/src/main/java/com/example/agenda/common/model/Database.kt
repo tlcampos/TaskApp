@@ -4,12 +4,12 @@ import java.util.UUID
 
 object Database {
 
-    val userAuth = hashSetOf<UserAuth>()
+    val user = hashSetOf<User>()
 
-    var sessionAuth: UserAuth? = null
+    var sessionAuth: User? = null
 
     init {
-        userAuth.add(UserAuth(UUID.randomUUID().toString(),"userA@gmail.com","","",""))
-        userAuth.add(UserAuth(UUID.randomUUID().toString(),"userB@gmail.com","", "", ""))
+        user.add(User(UUID.randomUUID().toString(),"userA@gmail.com","","",""))
+        user.add(User(UUID.randomUUID().toString(),"userB@gmail.com","", "", ""))
     }
 }

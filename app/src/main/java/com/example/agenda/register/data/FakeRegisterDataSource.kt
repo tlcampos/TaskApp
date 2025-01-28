@@ -3,7 +3,7 @@ package com.example.agenda.register.data
 import android.os.Handler
 import android.os.Looper
 import com.example.agenda.common.model.Database
-import com.example.agenda.common.model.UserAuth
+import com.example.agenda.common.model.User
 import java.util.UUID
 
 class FakeRegisterDataSource : RegisterDataSource {
@@ -11,7 +11,7 @@ class FakeRegisterDataSource : RegisterDataSource {
     override fun create(email: String, callback: RegisterCallback) {
         Handler(Looper.getMainLooper()).postDelayed({
 
-            val userAuth = Database.userAuth.firstOrNull { email == it.email }
+            val userAuth = Database.user.firstOrNull { email == it.email }
 
             if (userAuth == null) {
                 callback.onSuccess()
@@ -32,13 +32,13 @@ class FakeRegisterDataSource : RegisterDataSource {
     ) {
         Handler(Looper.getMainLooper()).postDelayed({
 
-            val userAuth = Database.userAuth.firstOrNull { email == it.email }
+            val userAuth = Database.user.firstOrNull { email == it.email }
 
             if (userAuth != null) {
             callback.onFailure("Usuário já cadastrado")
             } else {
-                val newUser = UserAuth(UUID.randomUUID().toString(), email, name, document, password)
-                val created = Database.userAuth.add(newUser)
+                val newUser = User(UUID.randomUUID().toString(), email, name, document, password)
+                val created = Database.user.add(newUser)
 
                 if (created) {
                     Database.sessionAuth = newUser

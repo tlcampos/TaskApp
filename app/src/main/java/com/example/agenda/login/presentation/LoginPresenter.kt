@@ -5,7 +5,6 @@ import com.example.agenda.R
 import com.example.agenda.login.Login
 import com.example.agenda.login.data.LoginCallback
 import com.example.agenda.login.data.LoginRepository
-import com.example.agenda.common.model.UserAuth
 
 class LoginPresenter(
     private var view: Login.View?,

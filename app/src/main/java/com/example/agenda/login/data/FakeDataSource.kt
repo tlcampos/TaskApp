@@ -8,7 +8,7 @@ class FakeDataSource : LoginDataSource {
     override fun login(email: String, password: String, callback: LoginCallback) {
         Handler(Looper.getMainLooper()).postDelayed({
 
-            val userAuth = Database.userAuth.firstOrNull { email == it.email }
+            val userAuth = Database.user.firstOrNull { email == it.email }
 
             when {
                 userAuth == null -> {

@@ -1,8 +1,6 @@
 package com.example.agenda.common.model
 
-import java.util.UUID
-
-class UserAuth(
+class User(
     var uuid: String,
     val email: String = "",
     val name: String = "",
