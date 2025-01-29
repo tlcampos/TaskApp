@@ -1,0 +1,73 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/splash_img_ciaf"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="10dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_ciaf"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/splash_txt_ciaf" />
+
+    <TextView
+        android:id="@+id/splash_txt_ciaf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="10dp"
+        android:padding="8dp"
+        android:text="@string/ciaf_text"
+        android:textAllCaps="true"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/splash_img_ciaf" />
+
+    <ImageView
+        android:id="@+id/splash_img_nodrugs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="1"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_nodrugs"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:alpha="1" />
+
+    <TextView
+        android:id="@+id/splash_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/secretaria_txt"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/splash_img_barueri"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/splash_img_barueri" />
+
+    <ImageView
+        android:id="@+id/splash_img_barueri"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:contentDescription="@null"
+        android:padding="15dp"
+        android:src="@drawable/ic_barueri"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/splash_txt"
+        app:layout_constraintStart_toEndOf="@+id/splash_txt_ciaf"
+        app:layout_constraintTop_toTopOf="@+id/splash_txt_ciaf"
+        app:layout_constraintVertical_bias="0.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>

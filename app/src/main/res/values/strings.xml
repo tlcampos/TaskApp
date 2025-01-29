@@ -40,4 +40,6 @@
     <string name="invalid_email">E-mail inválido.</string>
     <string name="you_havent_made_your_reservation">Você ainda não fez sua reserva.</string>
     <string name="here_is_your_reservation">Aqui estão suas reservas.</string>
+    <string name="ciaf_text">CIAF \nCentro Integrado \n de Apoio a Familia</string>
+    <string name="secretaria_txt">Secretaria \n da Familia</string>
 </resources>
