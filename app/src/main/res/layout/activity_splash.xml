@@ -32,7 +32,7 @@
         app:layout_constraintStart_toEndOf="@+id/splash_img_ciaf" />
 
     <ImageView
-        android:id="@+id/splash_img_nodrugs"
+        android:id="@+id/splash_img_no_drugs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:alpha="1"

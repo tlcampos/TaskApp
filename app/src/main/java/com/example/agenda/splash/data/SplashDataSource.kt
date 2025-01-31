@@ -1,4 +1,5 @@
 package com.example.agenda.splash.data
 
-class SplashDataSource {
+interface SplashDataSource {
+    fun session(callback: SplashCallback)
 }

@@ -11,5 +11,7 @@ object Database {
     init {
         user.add(User(UUID.randomUUID().toString(),"userA@gmail.com","","",""))
         user.add(User(UUID.randomUUID().toString(),"userB@gmail.com","", "", ""))
+
+        sessionAuth = user.first()
     }
 }
