@@ -39,14 +39,6 @@ class MainActivity : AppCompatActivity() {
         )
         reservationList.add(reservation2)
 
-        val reservation3 = ReservationTicket(
-            id = "0000003",
-            date = "Reserva para o dia 23 Jan 2025",
-            status = "Registrada"
-
-        )
-        reservationList.add(reservation3)
-
         binding.rvMain.adapter = adapter
 
         binding.toolbarMain.title = getString(R.string.welcome,name)
